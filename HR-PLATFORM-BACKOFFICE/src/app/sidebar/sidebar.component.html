@@ -1,0 +1,102 @@
+<!-- Sidebar -->
+<div class="sidebar">
+  <!-- Logo Header -->
+  <div class="sidebar-logo">
+    <div class="logo-header">
+      <!-- Logo -->
+      <a routerLink="/" class="logo">
+        <img src="assets/logo-bee.png" alt="navbar brand" class="navbar-brand" />
+
+      </a>
+
+      <!-- Sidebar Toggle Buttons -->
+      <div class="nav-toggle">
+        <button class="btn btn-toggle toggle-sidebar">
+          <i class="gg-menu-right"></i>
+        </button>
+        <button class="btn btn-toggle sidenav-toggler">
+          <i class="gg-menu-left"></i>
+        </button>
+      </div>
+
+      <!-- Topbar Toggler -->
+      <button class="topbar-toggler more">
+        <i class="gg-more-vertical-alt"></i>
+      </button>
+    </div>
+    <!-- End Logo Header -->
+  </div>
+
+  <!-- Sidebar Content -->
+  <div class="sidebar-wrapper scrollbar scrollbar-inner">
+    <div class="sidebar-content">
+      <ul class="nav nav-secondary">
+
+        <!-- Dashboard -->
+        <li class="nav-item">
+          <a routerLink="/models/dashboard">
+            <i class="fas fa-home"></i>
+            <p>Dashboard</p>
+          </a>
+        </li>
+
+        <li class="nav-section">
+          <span class="sidebar-mini-icon">
+            <i class="fa fa-ellipsis-h"></i>
+          </span>
+          <h4 class="text-section">Modules</h4>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="/users/list" routerLinkActive="active">
+            <i class="fas fa-user"></i>
+            <p>Users</p>
+          </a>
+        </li>
+
+
+        <!-- Roles -->
+        <li class="nav-item">
+          <a routerLink="/roles" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-user-tag me-2"></i>
+            <p>Roles</p>
+          </a>
+        </li>
+
+        <!-- CVs -->
+        <li class="nav-item">
+          <a routerLink="/cvs" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-file-alt"></i>
+            <p>CVs</p>
+          </a>
+        </li>
+
+        <!-- Demandes -->
+        <li class="nav-item">
+          <a routerLink="/demandes" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-envelope"></i>
+            <p>Demandes</p>
+          </a>
+        </li>
+
+        <!-- Job Offres -->
+        <li class="nav-item">
+          <a routerLink="/joboffres" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-briefcase"></i>
+            <p>Job Offres</p>
+          </a>
+        </li>
+
+        <!-- Entretiens -->
+        <li class="nav-item">
+          <a routerLink="/entretiens" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-microphone"></i>
+            <p>Entretiens</p>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- End Sidebar -->

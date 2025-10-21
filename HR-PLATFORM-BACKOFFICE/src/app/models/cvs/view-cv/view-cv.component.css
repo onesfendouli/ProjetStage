@@ -1,0 +1,56 @@
+/* 🌟 Style global du conteneur */
+.container {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+.animate-fade-in {
+  animation: fadeIn 0.6s ease both;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.cv-preview iframe {
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(13,110,253,0.4);
+}
+/* Bouton Télécharger */
+.btn-download {
+  background: linear-gradient(135deg, #00d4ff, #7a00ff);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 25px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(122, 0, 255, 0.3);
+}
+
+.btn-download i {
+  font-size: 1rem;
+}
+
+/* Animation au survol */
+.btn-download:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(122, 0, 255, 0.5);
+}

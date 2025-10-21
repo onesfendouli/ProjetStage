@@ -1,0 +1,29 @@
+[
+  {
+    "intentId": "greeting",
+    "name": "Salutation",
+    "patterns": ["bonjour", "salut", "hello", "coucou"],
+    "responses": ["Bonjour ! Comment puis-je vous aider aujourd'hui ?"],
+    "followUpQuestions": ["Comment postuler à une offre ?", "Quels sont les documents nécessaires ?"],
+    "context": "general",
+    "requiresAuth": false
+  },
+  {
+    "intentId": "job_offers",
+    "name": "Offres d'emploi",
+    "patterns": ["quelles sont les offres", "offres d'emploi", "postes disponibles", "emplois"],
+    "responses": ["Vous pouvez consulter toutes nos offres ici : /jobs"],
+    "followUpQuestions": ["Comment postuler ?", "Quels sont les critères ?"],
+    "context": "job",
+    "requiresAuth": false
+  },
+  {
+    "intentId": "application_status",
+    "name": "Suivi candidature",
+    "patterns": ["suivi candidature", "état de ma candidature", "où en est ma demande"],
+    "responses": ["Pour vérifier l'état de votre candidature, veuillez vous connecter."],
+    "followUpQuestions": [],
+    "context": "application",
+    "requiresAuth": true
+  }
+]

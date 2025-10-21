@@ -1,0 +1,50 @@
+<div class="login-wrap">
+  <div class="login-html">
+    <!-- Tabs -->
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+    <label for="tab-1" class="tab">Sign In</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up">
+    <label for="tab-2" class="tab">Sign Up</label>
+
+    <div class="login-form">
+      <!-- Sign In -->
+      <div class="sign-in-htm">
+        <div class="group">
+          <input type="text" class="input" placeholder="Username" [(ngModel)]="signInData.username" name="signin-username">
+        </div>
+        <div class="group">
+          <input type="password" class="input" placeholder="Password" [(ngModel)]="signInData.password" name="signin-password">
+        </div>
+        <div class="group">
+          <button class="button" (click)="signIn()">Sign In</button>
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <a href="#">Forgot Password?</a>
+        </div>
+      </div>
+
+      <!-- Sign Up -->
+      <div class="sign-up-htm">
+        <div class="group">
+          <input type="text" class="input" placeholder="First Name" [(ngModel)]="signUpData.firstname" name="signup-firstname">
+        </div>
+        <div class="group">
+          <input type="text" class="input" placeholder="Last Name" [(ngModel)]="signUpData.lastname" name="signup-lastname">
+        </div>
+        <div class="group">
+          <input type="date" class="input" [(ngModel)]="signUpData.dateOfBirth" name="signup-dob">
+        </div>
+        <div class="group">
+          <input type="email" class="input" placeholder="Email" [(ngModel)]="signUpData.email" name="signup-email">
+        </div>
+        <div class="group">
+          <input type="password" class="input" placeholder="Password" [(ngModel)]="signUpData.password" name="signup-password">
+        </div>
+        <div class="group">
+          <button class="button" (click)="signUp()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

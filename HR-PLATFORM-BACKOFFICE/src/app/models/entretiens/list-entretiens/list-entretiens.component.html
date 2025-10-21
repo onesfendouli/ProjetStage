@@ -1,0 +1,55 @@
+<div class="container mt-5 animate-fade-in">
+  <div class="card shadow-sm border-0 rounded-4 p-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold text-primary">
+        <i class="fas fa-calendar-alt me-2"></i>Liste des Entretiens
+      </h3>
+      <button class="btn btn-gradient" routerLink="/entretiens/add">
+        <i class="fas fa-plus me-2"></i>Planifier un Entretien
+      </button>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Demande ID</th>
+          <th>Date</th>
+          <th>Lieu</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let e of entretiens" class="text-center bg-white shadow-sm rounded">
+          <td>{{ e.id }}</td>
+          <td>{{ e.demandeId }}</td>
+          <td>{{ e.date | date:'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ e.location }}</td>
+          <td>
+              <span [ngClass]="{
+                'badge bg-warning': e.status==='PENDING',
+                'badge bg-success': e.status==='ACCEPTED',
+                'badge bg-danger': e.status==='CANCELED'
+              }">
+                {{ e.status }}
+              </span>
+          </td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm me-2" [routerLink]="['/entretiens/details', e.id]">
+              <i class="fas fa-eye"></i>
+            </button>
+            <button class="btn btn-outline-danger btn-sm">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+

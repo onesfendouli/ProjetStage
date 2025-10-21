@@ -1,0 +1,48 @@
+<div class="container mt-5 animate-fade-in">
+  <div class="card shadow-sm border-0 rounded-4 p-4">
+
+    <!-- 🔹 Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold text-primary">
+        <i class="fas fa-calendar-plus me-2"></i>Planifier un Entretien
+      </h3>
+    </div>
+
+    <!-- 🔹 Formulaire -->
+    <form (ngSubmit)="onSubmit()" class="row g-3">
+
+      <div class="col-md-6">
+        <label for="demandeId" class="form-label">ID de la Demande</label>
+        <input type="number" id="demandeId" class="form-control" [(ngModel)]="entretien.demandeId" name="demandeId" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="date" class="form-label">Date & Heure</label>
+        <input type="datetime-local" id="date" class="form-control" [(ngModel)]="entretien.date" name="date" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="location" class="form-label">Lieu</label>
+        <input type="text" id="location" class="form-control" [(ngModel)]="entretien.location" name="location" required>
+      </div>
+
+      <div class="col-md-6">
+        <label for="status" class="form-label">Statut</label>
+        <select id="status" class="form-select" [(ngModel)]="entretien.status" name="status" required>
+          <option value="PENDING">PENDING</option>
+          <option value="ACCEPTED">ACCEPTED</option>
+          <option value="CANCELED">CANCELED</option>
+        </select>
+      </div>
+
+      <div class="col-12 d-flex justify-content-end mt-3">
+        <button type="submit" class="btn btn-gradient">
+          <i class="fas fa-save me-2"></i>Enregistrer
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+

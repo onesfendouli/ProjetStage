@@ -1,0 +1,43 @@
+<div class="cv-container">
+  <div class="cv-card shadow-sm">
+
+    <!-- Header -->
+    <div class="cv-card-header d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold text-primary"><i class="fas fa-file-alt me-2"></i>Liste des CV</h3>
+    </div>
+
+    <!-- Table des CVs -->
+    <div class="table-responsive">
+      <table class="cv-table table align-middle mb-0 text-center">
+        <thead>
+        <tr>
+          <th><i class="fas fa-id-badge"></i> ID</th>
+          <th><i class="fas fa-user"></i> Utilisateur</th>
+          <th><i class="fas fa-file"></i> Fichier CV</th>
+          <th><i class="fas fa-calendar-alt"></i> Date Upload</th>
+          <th><i class="fas fa-cogs"></i> Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let cv of cvs" class="cv-row animate-fade-in">
+          <td>{{ cv.id }}</td>
+          <td>{{ cv.user.firstname }} {{ cv.user.lastname }}</td>
+          <td><span class="cv-badge">{{ cv.filePath }}</span></td>
+          <td>{{ cv.uploadDate | date:'dd/MM/yyyy' }}</td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm me-2" title="Voir le CV"
+                    [routerLink]="['/cvs/view']">
+              <i class="fas fa-eye"></i>
+            </button>
+
+            <button class="btn btn-outline-danger btn-sm" (click)="deleteCV(cv.id)" title="Supprimer">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

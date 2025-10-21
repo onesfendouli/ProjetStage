@@ -1,0 +1,46 @@
+<div class="container mt-5">
+  <div class="details-card shadow-sm p-4">
+
+    <!-- Avatar animé et Nom -->
+    <div class="text-center mb-4 avatar-header">
+      <img [src]="user.avatar" alt="Avatar" class="avatar-detail shadow-sm">
+      <h3 class="mt-3">{{ user.firstname }} {{ user.lastname }}</h3>
+      <span class="badge bg-gradient-role">{{ user.role }}</span>
+    </div>
+
+    <!-- Informations structurées avec icônes -->
+    <div class="user-info">
+      <div class="info-item">
+        <i class="fas fa-envelope me-2 info-icon"></i>
+        <span class="info-label">Email:</span>
+        <span class="info-value">{{ user.email }}</span>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-birthday-cake me-2 info-icon"></i>
+        <span class="info-label">Date de naissance:</span>
+        <span class="info-value">{{ user.dateOfBirth }}</span>
+      </div>
+      <div class="info-item" *ngIf="user.phone">
+        <i class="fas fa-phone me-2 info-icon"></i>
+        <span class="info-label">Téléphone:</span>
+        <span class="info-value">{{ user.phone }}</span>
+      </div>
+      <div class="info-item" *ngIf="user.address">
+        <i class="fas fa-map-marker-alt me-2 info-icon"></i>
+        <span class="info-label">Adresse:</span>
+        <span class="info-value">{{ user.address }}</span>
+      </div>
+    </div>
+
+    <!-- Boutons -->
+    <div class="d-flex justify-content-end gap-3 mt-4">
+      <button class="btn btn-modern btn-secondary" (click)="goBack()">
+        <i class="fas fa-arrow-left me-1"></i> Retour
+      </button>
+      <button class="btn btn-modern btn-primary" (click)="editUser()">
+        <i class="fas fa-edit me-1"></i> Modifier
+      </button>
+    </div>
+
+  </div>
+</div>

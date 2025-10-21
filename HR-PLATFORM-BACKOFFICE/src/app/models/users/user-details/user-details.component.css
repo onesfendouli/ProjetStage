@@ -1,0 +1,140 @@
+.container {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #495057;
+}
+
+/* Carte principale */
+.details-card {
+  max-width: 720px;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeInCard 0.8s ease forwards;
+}
+
+/* Header avatar */
+.avatar-header {
+  animation: bounceIn 1s ease;
+}
+
+.avatar-detail {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 4px solid #6610f2;
+}
+
+.avatar-detail:hover {
+  transform: scale(1.15) rotate(-3deg);
+  box-shadow: 0 0 25px rgba(102, 16, 242, 0.5);
+}
+
+/* Badge role */
+.badge.bg-gradient-role {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #6610f2, #0d6efd);
+  color: #fff;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+/* Infos */
+.user-info {
+  margin-top: 25px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 16, 242, 0.15);
+}
+
+.info-icon {
+  font-size: 1.2rem;
+  color: #6610f2;
+  width: 30px;
+}
+
+.info-label {
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.info-value {
+  color: #495057;
+}
+
+/* Buttons modern */
+.btn-modern {
+  border-radius: 12px;
+  padding: 10px 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.btn-modern i {
+  margin-right: 6px;
+}
+
+.btn-modern.btn-primary {
+  background: linear-gradient(135deg, #6610f2, #0d6efd);
+  color: #fff;
+}
+
+.btn-modern.btn-primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(102, 16, 242, 0.5);
+}
+
+.btn-modern.btn-secondary {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.btn-modern.btn-secondary:hover {
+  background-color: #dee2e6;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInCard {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .details-card {
+    padding: 20px 15px;
+  }
+  .avatar-detail {
+    width: 110px;
+    height: 110px;
+  }
+}

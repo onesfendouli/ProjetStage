@@ -1,0 +1,43 @@
+/* Logo sidebar */
+.sidebar .logo-header .navbar-brand {
+  height: 150px; /* Hauteur souhaitée */
+  width: auto;   /* largeur proportionnelle */
+}
+
+.sidebar {
+  background: linear-gradient(135deg, #007bff, #6610f2); /* bleu → violet */
+  color: #fff; /* texte blanc pour contraste */
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+/* Logo header et liste héritent de la couleur du sidebar */
+.logo-header,
+.sidebar .sidebar-content {
+  background-color: inherit; /* utilise la couleur du parent */
+}
+
+/* Logo image plus grande */
+.logo-header .navbar-brand {
+  height: 60px;
+  width: auto;
+}
+
+/* Liens dans le sidebar */
+.sidebar .nav-item a {
+  color: #fff; /* texte clair */
+  padding: 10px 15px;
+  display: block;
+  transition: background-color 0.2s;
+}
+
+/* Hover sur les liens */
+.sidebar .nav-item a:hover {
+  background-color: #365493; /* bleu plus foncé au survol */
+  color: #fff;
+}
+
+/* Sections et titres */
+.nav-section h4,
+.sidebar .nav-section span {
+  color: #f0f0f0; /* texte clair */
+}

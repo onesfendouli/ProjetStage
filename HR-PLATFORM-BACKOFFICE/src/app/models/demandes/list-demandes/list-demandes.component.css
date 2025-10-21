@@ -1,0 +1,114 @@
+/* Container général */
+.container {
+  font-family: 'Poppins', sans-serif;
+  color: #343a40;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Card principale */
+.card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: slideUp 0.8s ease forwards;
+  padding: 20px;
+}
+
+/* Header */
+h3 {
+  color: #0d6efd;
+  display: flex;
+  align-items: center;
+}
+
+h3 i {
+  color: #ffffff; /* si tu veux sur fond gradient */
+}
+
+/* Bouton Ajouter */
+.btn-gradient {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+}
+
+/* Tableau demandes */
+.table {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  animation: fadeIn 0.6s ease both;
+}
+
+.table th {
+  background: linear-gradient(90deg, #007bff, #6610f2);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.5px;
+}
+
+.table th i {
+  color: #ffffff;
+}
+
+.table tbody tr:hover {
+  background-color: #e3f2fd;
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+/* Badges status */
+.badge {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.badge.bg-warning { background-color: #ffc107; color: #fff; }
+.badge.bg-success { background-color: #198754; color: #fff; }
+.badge.bg-danger  { background-color: #dc3545; color: #fff; }
+
+/* Boutons action */
+.btn-outline-primary, .btn-outline-danger {
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease both;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

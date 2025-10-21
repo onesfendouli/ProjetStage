@@ -1,0 +1,91 @@
+.cv-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 60px 20px;
+}
+
+.cv-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 30px 25px;
+  animation: slideUp 0.8s ease forwards;
+}
+
+/* Header */
+.cv-card-header h3 {
+  color: #6610f2;
+  display: flex;
+  align-items: center;
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  color: #fff;
+  border-radius: 12px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(102,16,242,0.4);
+}
+
+/* Table */
+.cv-table {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+.cv-table th {
+  background: linear-gradient(90deg, #007bff, #6610f2);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  text-transform: uppercase;
+}
+
+.cv-table th i {
+  color: #fff;
+}
+
+.cv-badge {
+  background: linear-gradient(135deg, #00d4ff, #7a00ff);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  box-shadow: 0 3px 8px rgba(122,0,255,0.3);
+}
+
+/* Buttons d’action */
+.btn-outline-primary, .btn-outline-danger {
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease both;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}

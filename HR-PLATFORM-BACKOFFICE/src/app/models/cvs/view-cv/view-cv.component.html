@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="card shadow-sm p-4 rounded-4 animate-fade-in">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold text-primary">
+        <i class="fas fa-file-pdf me-2"></i>Visualisation du CV
+      </h3>
+    </div>
+
+    <!-- User Info -->
+    <div class="mb-4">
+      <h5><i class="fas fa-user me-2 text-secondary"></i>Nom :</h5>
+      <p>{{ cv.user.firstname }} {{ cv.user.lastname }}</p>
+
+      <h5><i class="fas fa-calendar-alt me-2 text-secondary"></i>Date d'upload :</h5>
+      <p>{{ cv.uploadDate | date:'dd/MM/yyyy' }}</p>
+    </div>
+
+    <!-- Boutons Actions -->
+    <div class="d-flex justify-content-end mb-3 gap-2">
+      <a class="btn btn-download"
+         [href]="'/api/cvs/download/' + cv.id" download>
+        <i class="fas fa-download"></i> Télécharger
+      </a>
+
+
+      <!-- Retour -->
+      <button class="btn btn-gradient" routerLink="/cvs">
+        <i class="fas fa-arrow-left me-2"></i>Retour
+      </button>
+    </div>
+
+
+  </div>
+</div>
