@@ -1,0 +1,27 @@
+<div class="list-container">
+  <!-- Boîte de recherche -->
+  <div class="search-wrapper">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="🔍 Rechercher une offre..." class="search-box"/>
+  </div>
+
+  <!-- Liste des offres -->
+  <div *ngFor="let job of filteredJobs" class="job-card">
+    <div class="job-header">
+      <h3>{{ job.title }}</h3>
+      <span class="company">{{ job.company }}</span>
+    </div>
+    <div class="job-body">
+      <p>
+        <i class="fas fa-map-marker-alt"></i>
+        {{ job.location }}
+      </p>
+      <p>
+        <i class="far fa-calendar-alt"></i>
+        Publié le {{ job.date }}
+      </p>
+    </div>
+    <div class="job-footer">
+      <button (click)="goToDetails(job.id)" class="btn-details">Voir détails</button>
+    </div>
+  </div>
+</div>

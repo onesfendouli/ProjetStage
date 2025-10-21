@@ -1,0 +1,35 @@
+
+<div class="modal" *ngIf="isOpen">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2 *ngIf="isLogin">Se connecter</h2>
+    <h2 *ngIf="!isLogin">Créer un compte</h2>
+
+    <form (submit)="onSubmit($event)">
+      <label>Email</label>
+      <input type="email" placeholder="Votre email" required [(ngModel)]="email" name="email">
+
+      <label>Mot de passe</label>
+      <input type="password" placeholder="Votre mot de passe" required [(ngModel)]="password" name="password">
+
+      <div *ngIf="!isLogin">
+        <label>Confirmer le mot de passe</label>
+        <input type="password" placeholder="Confirmez votre mot de passe" required [(ngModel)]="confirmPassword" name="confirmPassword">
+
+        <label>Date de naissance</label>
+        <input type="date" required [(ngModel)]="birthDate" name="birthDate">
+
+        <label>Lieu</label>
+        <input type="text" placeholder="Votre ville / pays" required [(ngModel)]="location" name="location">
+      </div>
+
+      <button type="submit" class="btn-login">{{ isLogin ? 'Connexion' : 'Inscription' }}</button>
+    </form>
+
+    <p class="signup-text">
+      <a href="#" (click)="toggleForm()">
+        {{ isLogin ? 'Pas encore inscrit ? Créer un compte' : 'Déjà un compte ? Se connecter' }}
+      </a>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div *ngIf="user" class="profile-container">
+  <div class="profile-header">
+    <img src="assets/user-avatar.jpg" alt="Avatar" class="avatar">
+    <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <p *ngIf="user.location">Lieu: {{ user.location }}</p>
+    <p *ngIf="user.birthDate">Date de naissance: {{ user.birthDate | date:'dd/MM/yyyy' }}</p>
+  </div>
+
+  <div class="profile-details">
+    <div class="detail-item" *ngIf="user.education">
+      <span class="label">Niveau d'étude:</span> {{ user.education }}
+    </div>
+    <div class="detail-item" *ngIf="user.experience">
+      <span class="label">Expérience:</span> {{ user.experience }}
+    </div>
+    <div class="detail-item" *ngIf="user.phone">
+      <span class="label">Téléphone:</span> {{ user.phone }}
+    </div>
+  </div>
+
+  <div class="profile-actions">
+    <button (click)="logout()">Déconnexion</button>
+  </div>
+</div>

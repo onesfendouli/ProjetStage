@@ -1,0 +1,94 @@
+<div *ngIf="job" class="details-container">
+  <h2>{{ job.title }}</h2>
+  <h4 class="company">{{ job.company }}</h4>
+
+  <p><i class="fas fa-map-marker-alt"></i> {{ job.location }}</p>
+  <p><i class="far fa-calendar-alt"></i> Publié le {{ job.date }}</p>
+
+  <h3>Description</h3>
+  <p>{{ job.description }}</p>
+
+  <h3>Exigences</h3>
+  <ul>
+    <li *ngFor="let req of job.requirements">
+      <i class="fas fa-check-circle"></i> {{ req }}
+    </li>
+  </ul>
+
+  <!-- Bouton Postuler -->
+  <button class="btn-apply" (click)="openModal()">Postuler</button>
+</div>
+
+<!-- Modal Postuler -->
+<div class="modal" *ngIf="isModalOpen">
+  <div class="modal-overlay" (click)="closeModal()"></div>
+  <div class="modal-content">
+    <button class="modal-close" (click)="closeModal()">×</button>
+    <h2>Compléter votre inscription</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+      <div class="form-row">
+        <label>Prénom *</label>
+        <input type="text" formControlName="firstName" placeholder="Prénom">
+      </div>
+      <div class="form-row">
+        <label>Nom *</label>
+        <input type="text" formControlName="lastName" placeholder="Nom">
+      </div>
+      <div class="form-row">
+        <label>Date de naissance *</label>
+        <input type="date" formControlName="birthDate">
+      </div>
+      <div class="form-row">
+        <label>Pays *</label>
+        <input type="text" formControlName="country" placeholder="Pays">
+      </div>
+      <div class="form-row">
+        <label>Téléphone *</label>
+        <input type="tel" formControlName="phone" placeholder="Téléphone">
+      </div>
+      <div class="form-row">
+        <label>Niveau d'étude *</label>
+        <select formControlName="education">
+          <option value="">Sélectionner</option>
+          <option>Débutant</option>
+          <option>Intermédiaire</option>
+          <option>Avancé</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Niveau d'expérience *</label>
+        <select formControlName="experience">
+          <option value="">Sélectionner</option>
+          <option>0-1 ans</option>
+          <option>2-5 ans</option>
+          <option>5+ ans</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Mot de passe *</label>
+        <input type="password" formControlName="password1" placeholder="Mot de passe">
+      </div>
+      <div class="form-row">
+        <label>Confirmation du mot de passe *</label>
+        <input type="password" formControlName="password2" placeholder="Confirmer le mot de passe">
+      </div>
+      <div class="form-row">
+        <label>Joindre votre CV</label>
+        <input type="file" formControlName="cv" accept=".pdf,.doc,.docx,.rtf,.odt">
+      </div>
+      <div class="form-row checkbox">
+        <label>
+          <input type="checkbox" formControlName="jobAlerts">
+          Accepter de recevoir nos alertes d'emploi et de formations
+        </label>
+      </div>
+      <div class="form-row checkbox">
+        <label>
+          <input type="checkbox" formControlName="partnerOffers">
+          Accepter de recevoir les offres promotionnelles de nos partenaires
+        </label>
+      </div>
+      <button type="submit" class="btn-submit">Enregistrer</button>
+    </form>
+  </div>
+</div>

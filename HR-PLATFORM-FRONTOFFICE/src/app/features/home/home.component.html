@@ -1,0 +1,173 @@
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content left-align">
+      <h1 class="hero-title">Bienvenue sur <span class="highlight">WorkNest</span></h1>
+      <p class="hero-subtitle">Votre futur commence ici !</p>
+    </div>
+  </div>
+</section>
+<section class="offers-section">
+  <div class="container">
+    <div class="header text-center" data-aos="fade-down">
+      <h2>Nos opportunités récentes</h2>
+      <p>Découvrez nos postes disponibles</p>
+    </div>
+
+    <div class="cards">
+      <div class="card" *ngFor="let job of jobs">
+        <!-- Image / logo entreprise -->
+        <div class="card-img">
+          <img [src]="'assets/' + job.image" alt="{{ job.title }}">
+        </div>
+
+        <!-- Contenu de la carte -->
+        <div class="card-content">
+          <h6 class="company-name">{{ job.company }}</h6>
+          <h3 class="job-title">{{ job.title }}</h3>
+          <p class="job-location">{{ job.location }} | {{ job.type }}</p>
+          <p class="job-experience"><i class="fa-solid fa-briefcase"></i> {{ job.experience }}</p>
+          <p class="job-salary"><i class="fa-solid fa-dollar-sign"></i> {{ job.salary }}</p>
+
+          <!-- Bouton Postuler -->
+          <button (click)="openApplyModal(job)">Postuler</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button routerLink="/jobs" class="see-all-btn">Voir toutes les offres</button>
+    </div>
+  </div>
+</section>
+
+<!-- Modal Postuler -->
+<div class="modal" *ngIf="isModalOpen">
+  <div class="modal-overlay" (click)="closeModal()"></div>
+  <div class="modal-content">
+    <button class="modal-close" (click)="closeModal()">×</button>
+    <h2>Compléter votre inscription</h2>
+    <form [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+      <div class="form-row">
+        <label>Prénom *</label>
+        <input type="text" formControlName="firstName" placeholder="Prénom">
+      </div>
+      <div class="form-row">
+        <label>Nom *</label>
+        <input type="text" formControlName="lastName" placeholder="Nom">
+      </div>
+      <div class="form-row">
+        <label>Date de naissance *</label>
+        <input type="date" formControlName="birthDate">
+      </div>
+      <div class="form-row">
+        <label>Pays *</label>
+        <input type="text" formControlName="country" placeholder="Pays">
+      </div>
+      <div class="form-row">
+        <label>Téléphone *</label>
+        <input type="tel" formControlName="phone" placeholder="Téléphone">
+      </div>
+      <div class="form-row">
+        <label>Niveau d'étude *</label>
+        <select formControlName="education">
+          <option value="">Sélectionner</option>
+          <option>Débutant</option>
+          <option>Intermédiaire</option>
+          <option>Avancé</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Niveau d'expérience *</label>
+        <select formControlName="experience">
+          <option value="">Sélectionner</option>
+          <option>0-1 ans</option>
+          <option>2-5 ans</option>
+          <option>5+ ans</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Mot de passe *</label>
+        <input type="password" formControlName="password1" placeholder="Mot de passe">
+      </div>
+      <div class="form-row">
+        <label>Confirmation du mot de passe *</label>
+        <input type="password" formControlName="password2" placeholder="Confirmer le mot de passe">
+      </div>
+      <div class="form-row">
+        <label>Joindre votre CV</label>
+        <input type="file" formControlName="cv" accept=".pdf,.doc,.docx,.rtf,.odt">
+      </div>
+      <div class="form-row checkbox">
+        <label>
+          <input type="checkbox" formControlName="jobAlerts">
+          Recevoir nos alertes d'emploi
+        </label>
+      </div>
+      <div class="form-row checkbox">
+        <label>
+          <input type="checkbox" formControlName="partnerOffers">
+          Offres partenaires
+        </label>
+      </div>
+      <button type="submit" class="btn-submit">Enregistrer</button>
+    </form>
+  </div>
+</div>
+
+
+<!-- Pourquoi WorkNest -->
+<section class="values-section">
+  <div class="values-wrapper">
+    <!-- Logo au-dessus -->
+    <div class="values-logo">
+      <img src="assets/logo-bee.png" alt="WorkNest Logo">
+    </div>
+
+    <h2>Pourquoi WorkNest ?</h2>
+
+    <!-- Cartes des valeurs -->
+    <div class="values-cards">
+      <div class="card">
+        <div class="card-icon">
+          <img src="assets/value-collaboration.jpg" alt="Collaboration">
+        </div>
+        <h3>Collaboration</h3>
+        <p>Un environnement où chaque talent compte.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <img src="assets/value-career.jpg" alt="Carrière">
+        </div>
+        <h3>Carrière</h3>
+        <p>Des opportunités pour évoluer.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">
+          <img src="assets/value-performance.jpg" alt="Performance">
+        </div>
+        <h3>Performance</h3>
+        <p>Une plateforme axée sur la réussite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Rejoignez <span>WorkNest</span> aujourd'hui</h2>
+      <p>Construisez votre avenir professionnel avec nous.</p>
+      <!-- Bouton relié à la modal Sign Up -->
+      <button class="btn-cta" (click)="openSignUp()">Créer mon compte</button>
+    </div>
+  </section>
+
+
+<!-- Modal Login / Sign Up -->
+<app-login
+  [isOpen]="loginOpen"
+  (close)="closeLogin()">
+</app-login>
+
+
