@@ -138,7 +138,7 @@ Exemple pour l’entité **Employee** :
 ## 9. Auteur ✍️
 
 - **Nom** : Fendouli Ones 
-- **Projet** : HR Platform  
+- **Projet** : HR Platform For Finding  a Job  
 - **Email** : onesfendouli72@gmail.com  
 
 ---
